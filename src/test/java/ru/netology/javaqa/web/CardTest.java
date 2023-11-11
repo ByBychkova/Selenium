@@ -1,23 +1,18 @@
 package ru.netology.javaqa.web;
-import java.io.*;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.*;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.*;
-
-import org.openqa.selenium.chrome.*;
-
-import org.openqa.selenium.remote.*;
-
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 public class CardTest {
     private WebDriver driver;
    @BeforeAll
-    public static void setupAll(){
-        WebDriverManager.chromedriver().setup();
+   public static void setupAll(){
+       WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
@@ -34,6 +29,11 @@ public class CardTest {
     public void afterEach(){
        driver.quit();
        driver= null;
+    }
+
+    @Test
+    public void shouldTestSomething(){
+      driver.get("http://localhost:9999");
     }
 
 }
