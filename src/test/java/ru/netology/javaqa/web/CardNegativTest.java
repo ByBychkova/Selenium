@@ -22,14 +22,13 @@ public class CardNegativTest {
     }
 
     @BeforeEach
-    public void beforeEach() throws InterruptedException {
+    public void beforeEach(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:9999");
-        Thread.sleep(5000);
     }
 
     @AfterEach
